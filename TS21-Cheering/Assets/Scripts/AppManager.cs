@@ -6,7 +6,7 @@ using UnityEngine;
 public class AppManager : MonoBehaviour
 {
     public static AppManager Instance { get; private set; }
-    [SerializeField] SoundManager soundManager;
+    [SerializeField] public SoundManager soundManager;
     
     private void Awake()
     {

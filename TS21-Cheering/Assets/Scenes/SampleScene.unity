@@ -942,7 +942,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -973,6 +973,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 502445843}
     m_Modifications:
+    - target: {fileID: 1735224503536400978, guid: f629f25afa1adf7438a46992cd661d09,
+        type: 3}
+      propertyPath: audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 799c4c0ce9a2a9f4cb50ae525302e0cb, type: 3}
     - target: {fileID: 2448991650527101232, guid: f629f25afa1adf7438a46992cd661d09,
         type: 3}
       propertyPath: m_Pivot.x

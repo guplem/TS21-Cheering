@@ -21,7 +21,7 @@ public class SoundManager : MonoBehaviour
 
 
     //ToDo: Check if the limit of the pitch and pitchRandomization is -3 to 3
-    public void PlaySound(AudioClip clip, float volume, bool loop, float pitch, float pitchRandomization, AudioMixerGroup audioMixerGroup)
+    public void PlaySound(AudioClip clip, float volume = 1, bool loop = false, float pitch = 1, AudioMixerGroup audioMixerGroup = null)
     {
         if (clip == null)
         {
@@ -29,7 +29,7 @@ public class SoundManager : MonoBehaviour
             return;
         }
 
-        ConfigureAudioSource(GetFreeAudioSource(), clip, volume, loop, pitch, pitchRandomization, audioMixerGroup).Play();
+        ConfigureAudioSource(GetFreeAudioSource(), clip, volume, loop, pitch, audioMixerGroup).Play();
     }
 
     private AudioSource GetFreeAudioSource()
@@ -50,21 +50,21 @@ public class SoundManager : MonoBehaviour
     {
         AudioSource newAudioSource = gameObject.AddComponent<AudioSource>();
         newAudioSource.playOnAwake = false;
-        newAudioSource.spatialBlend = 1f;
-        newAudioSource.rolloffMode = AudioRolloffMode.Linear;
-        newAudioSource.minDistance = 0.0f;
-        newAudioSource.maxDistance = 30.0f; 
+        //newAudioSource.spatialBlend = 1f;
+        //newAudioSource.rolloffMode = AudioRolloffMode.Linear;
+        //newAudioSource.minDistance = 0.0f;
+        //newAudioSource.maxDistance = 30.0f; 
         audioSources.Add(newAudioSource);
 
         return newAudioSource;
     }
 
-    private AudioSource ConfigureAudioSource(AudioSource audioSource, AudioClip clip, float volume, bool loop, float pitch, float pitchRandomization, AudioMixerGroup audioMixerGroup)
+    private AudioSource ConfigureAudioSource(AudioSource audioSource, AudioClip clip, float volume = 1, bool loop = false, float pitch = 1, AudioMixerGroup audioMixerGroup = null)
     {
         audioSource.clip = clip;
         audioSource.volume = volume;
         audioSource.outputAudioMixerGroup = audioMixerGroup;
-        audioSource.pitch = pitchRandomization;
+        audioSource.pitch = pitch;
 
         audioSource.loop = loop;
 

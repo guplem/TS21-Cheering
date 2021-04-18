@@ -32,7 +32,8 @@ namespace UnityEngine
 
         public void Invoke()
         {
-            nextEvent ??= firstEvent;
+            if (nextEvent == null) 
+                nextEvent = firstEvent;
 
             nextEvent?.Invoke();
             

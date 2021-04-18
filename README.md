@@ -1,3 +1,3 @@
-# TS20-Thoughts
+# TS21-Cheers
 
-A game where you can only make people think.
+Let's cheer up your team!

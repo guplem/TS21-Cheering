@@ -14,7 +14,7 @@ public class DefaultSoundButton : MonoBehaviour
         buttonText.text = audioClip != null? audioClip.name : "";
     }
 
-    public void ButtonPressed()
+    public void PlaySound()
     {
         AppManager.Instance.soundManager.PlaySound(audioClip);
     }
